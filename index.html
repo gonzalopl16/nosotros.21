@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Años Juntos ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <!--  Added decorative cat -->
+        <div class="hearts" id="hearts"></div>
+    
+    <!--  Added decorative cat -->
+    <div class="decorative-cat">
+        <div class="cat-body"></div>
+        <div class="cat-head">
+            <div class="cat-ear left">
+                <div class="cat-ear-inner"></div>
+            </div>
+            <div class="cat-ear right">
+                <div class="cat-ear-inner"></div>
+            </div>
+            <div class="cat-eye left"></div>
+            <div class="cat-eye right"></div>
+            <div class="cat-nose"></div>
+            <div class="cat-whisker left"></div>
+            <div class="cat-whisker right"></div>
+        </div>
+    </div>
+
+    <!--  Added decorative white cat next to black cat -->
+    <div class="decorative-white-cat">
+        <div class="white-cat-body"></div>
+        <div class="white-cat-head">
+            <div class="white-cat-ear left">
+                <div class="white-cat-ear-inner"></div>
+            </div>
+            <div class="white-cat-ear right">
+                <div class="white-cat-ear-inner"></div>
+            </div>
+            <div class="white-cat-eye left"></div>
+            <div class="white-cat-eye right"></div>
+            <div class="white-cat-nose"></div>
+            <div class="white-cat-whisker left"></div>
+            <div class="white-cat-whisker right"></div>
+        </div>
+    </div>
+    <!--  Added decorative owl -->
+    <div class="decorative-owl">
+        <div class="owl-body">
+            <div class="owl-wing left"></div>
+            <div class="owl-wing right"></div>
+        </div>
+        <div class="owl-head">
+            <div class="owl-ear-tuft left"></div>
+            <div class="owl-ear-tuft right"></div>
+            <div class="owl-eye left">
+                <div class="owl-pupil"></div>
+            </div>
+            <div class="owl-eye right">
+                <div class="owl-pupil"></div>
+            </div>
+            <div class="owl-beak"></div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Nuestros 5 Años</h1>
+            <p class="subtitle">UN VIAJE DE INOLVIDABLE</p>
+            <div class="date-highlight">21 • Nuestra Fecha Especial</div>
+        </header>
+
+        <div class="gallery-container">
+            <div class="slideshow" id="slideshow">
+                <div class="slide active" style="background-image: url('img/66C9F080-DC0C-428A-BAB4-04605BD5594D.JPG');">
+                    <div class="slide-overlay">
+                        <div class="slide-text">"El amor no se mira, se siente"</div>
+                        <div class="slide-caption">Gracias por ser mi lugar seguro :'</div>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('img/IMG_5462.HEIC');">
+                    <div class="slide-overlay">
+                        <div class="slide-text">"Contigo, cada día es una aventura"</div>
+                        <div class="slide-caption">Momentos de risas y complicidad</div>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('img/Captura de pantalla 2025-09-21 a la(s) 12.54.50 a. m..png');">
+                    <div class="slide-overlay">
+                        <div class="slide-text">"Bailando bajo las estrellas"</div>
+                        <div class="slide-caption">Nuestras noches siempre son mágicas</div>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('img/E558B9B5-684A-4873-A4BA-778C98CF572E.JPG');">
+                    <div class="slide-overlay">
+                        <div class="slide-text">"Una sonrisa tuya es mi medicina para todo"</div>
+                        <div class="slide-caption">Regalame tus sonrisas</div>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('img/9D6EBFE0-9145-4B25-816C-C683DAE8C070.JPG');">
+                    <div class="slide-overlay">
+                        <div class="slide-text">"5 años y toda una vida por delante"</div>
+                        <div class="slide-caption">Un nuevo día nos aguarda :3</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="navigation prev" onclick="changeSlide(-1)">‹</button>
+            <button class="navigation next" onclick="changeSlide(1)">›</button>
+        </div>
+        
+        <div class="dots-container" id="dotsContainer"></div>
+        
+        <div class="surprise-section">
+            <button class="surprise-button" onclick="showSurprise()">
+                🌺Una Sorpresa Especial🍁
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Sorpresa -->
+    <div id="surpriseModal" class="modal" >
+        <div class="modal-content" style="margin-top: 5rem;">
+            <h2 class="modal-title">Ohayo Mishi!</h2>
+            <p class="modal-message">
+                Sorpresa! :D
+                <br><br>
+                Debo decir que estos ultimos años inicié una aventura sin saber qué depararía el futuro, fue un salto a ciegas, uno que me lleno de sentimientos muy bonitos por tu, gracias por darme alegría durante mis días
+                <br><br>
+                El 21 siempre será nuestra fecha especial, porque fue el día que escogimos para que sea especial, fue cuando nos comprometimos a tener un futuro, como algo mas que amigos y F xd
+                <br><br>
+                <strong>Te amo y como ya inicia la primavera te regalo esta florcita amarilla xd</strong>
+            </p>
+            <button class="close-button" onclick="closeSurprise()">Con todo mi love ❤️</button>
+        </div>
+    </div>
+
+    <!--  Added surprise flower that appears when button is clicked -->
+    <!-- Updated surprise flower to use provided sunflower image -->
+    <div class="surprise-flower" id="surpriseFlower">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-OknxAAf8cg5BjA98JJI2bSIiq3zbjR.png" alt="Sunflower" class="sunflower-image">
+    </div>
+ <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        // Crear puntos de navegación
+        function createDots() {
+            const dotsContainer = document.getElementById('dotsContainer');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Cambiar slide
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            document.querySelectorAll('.dot')[currentSlide].classList.remove('active');
+            
+            currentSlide += direction;
+            
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+            
+            slides[currentSlide].classList.add('active');
+            document.querySelectorAll('.dot')[currentSlide].classList.add('active');
+        }
+
+        // Ir a slide específico
+        function goToSlide(slideIndex) {
+            slides[currentSlide].classList.remove('active');
+            document.querySelectorAll('.dot')[currentSlide].classList.remove('active');
+            
+            currentSlide = slideIndex;
+            
+            slides[currentSlide].classList.add('active');
+            document.querySelectorAll('.dot')[currentSlide].classList.add('active');
+        }
+
+        // Auto-play slideshow
+        function startSlideshow() {
+            slideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 4000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+        }
+
+        // Mostrar sorpresa
+        function showSurprise() {
+            document.getElementById('surpriseModal').style.display = 'block';
+            document.getElementById('surpriseFlower').style.display = 'block';
+            createHearts();
+            stopSlideshow();
+        }
+
+        // Cerrar sorpresa
+        function closeSurprise() {
+            document.getElementById('surpriseModal').style.display = 'none';
+            document.getElementById('surpriseFlower').style.display = 'none';
+            document.getElementById('hearts').innerHTML = '';
+            startSlideshow();
+        }
+
+        // Crear corazones flotantes
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const heartSymbols = ['💕', '💖', '💗', '💝', '💘', '❤️', '💙', '💜'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                    heartsContainer.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 7000);
+                }, i * 200);
+            }
+        }
+
+        // Cerrar modal al hacer clic fuera
+        window.onclick = function(event) {
+            const modal = document.getElementById('surpriseModal');
+            if (event.target === modal) {
+                closeSurprise();
+            }
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            createDots();
+            startSlideshow();
+            
+            // Pausar slideshow al hacer hover
+            const galleryContainer = document.querySelector('.gallery-container');
+            galleryContainer.addEventListener('mouseenter', stopSlideshow);
+            galleryContainer.addEventListener('mouseleave', startSlideshow);
+        });
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (event.key === 'ArrowRight') {
+                changeSlide(1);
+            } else if (event.key === 'Escape') {
+                closeSurprise();
+            }
+        });
+    </script>
+</body>
+</html>
