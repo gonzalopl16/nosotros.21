@@ -1,0 +1,286 @@
+/* ==========================================================================
+   Valentine - Estilos específicos de San Valentín 💚🌙
+   ========================================================================== */
+
+/* Overlay con diseño de San Valentín */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Constelación de amor en el header */
+.love-constellation {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fbbf24, 0 0 20px rgba(251, 191, 36, 0.5);
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.star.moon-emoji {
+    width: 20px;
+    height: 20px;
+    background: none;
+    box-shadow: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star:nth-child(1) { top: 20px; left: 50px; animation-delay: 0s; }
+.star:nth-child(2) { top: 10px; left: 90px; animation-delay: 0.3s; }
+.star:nth-child(3) { top: 30px; left: 130px; animation-delay: 0.6s; }
+.star:nth-child(4) { top: 50px; left: 150px; animation-delay: 0.9s; }
+.star:nth-child(5) { top: 70px; left: 130px; animation-delay: 1.2s; }
+.star:nth-child(6) { top: 80px; left: 90px; animation-delay: 1.5s; }
+.star:nth-child(7) { top: 70px; left: 50px; animation-delay: 1.8s; }
+.star:nth-child(8) { top: 50px; left: 30px; animation-delay: 2.1s; }
+
+.constellation-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+    transform-origin: left;
+    opacity: 0.5;
+    animation: shimmerLine 3s ease-in-out infinite;
+}
+
+/* Nueva sección: Mensaje del Corazón */
+.heart-message {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: rgba(26, 19, 48, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(107, 33, 168, 0.3);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.heart-message::before {
+    content: '💚';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 100px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.heart-message-line {
+    font-size: 1.2rem;
+    color: #e2e8f0;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: typeIn 0.8s ease-out forwards;
+    text-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+}
+
+.heart-message-line:nth-child(1) { animation-delay: 0.5s; }
+.heart-message-line:nth-child(2) { animation-delay: 1s; }
+.heart-message-line:nth-child(3) { animation-delay: 1.5s; }
+.heart-message-line:nth-child(4) { animation-delay: 2s; }
+
+/* Botones de San Valentín */
+.valentine-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.valentine-button {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.valentine-button.hug-button {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+    transition: all 0.3s ease;
+}
+
+.valentine-button.hug-button.active {
+    background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+}
+
+.valentine-button.surprise-button {
+    background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+}
+
+.valentine-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+
+.valentine-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left var(--transition-medium);
+}
+
+.valentine-button:hover::before {
+    left: 100%;
+}
+
+/* Actualización del header para San Valentín */
+.header {
+    position: relative;
+    padding-top: 3rem;
+}
+
+.title {
+    color: white;
+    text-shadow: 0 0 20px rgba(167, 139, 250, 0.8),
+                 0 0 40px rgba(124, 58, 237, 0.5),
+                 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+    color: rgba(226, 232, 240, 0.9);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.date-highlight {
+    background: linear-gradient(135deg, #7c3aed 0%, #10b981 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.5);
+}
+
+/* Corazones flotantes alrededor de elementos */
+.floating-hearts-decoration {
+    position: absolute;
+    pointer-events: none;
+    font-size: 20px;
+    opacity: 0;
+    animation: floatUpHeart 3s ease-in-out infinite;
+}
+
+@keyframes typeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes shimmerLine {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes floatUpHeart {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) rotate(360deg);
+    }
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .heart-message {
+        padding: 1.5rem;
+        margin: 0 1rem 2rem;
+    }
+
+    .heart-message-line {
+        font-size: 1rem;
+    }
+
+    .valentine-buttons {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .valentine-button {
+        width: 100%;
+    }
+
+    .love-constellation {
+        width: 150px;
+        height: 80px;
+    }
+}

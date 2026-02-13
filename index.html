@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Años Juntos ❤️</title>
+    <title>💚 Te amo Mishi</title>
+
+    <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos modulares -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/slideshow.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/button.css">
+    <link rel="stylesheet" href="css/components/hearts.css">
+    <link rel="stylesheet" href="css/components/decorations.css">
+    <link rel="stylesheet" href="css/components/valentine.css">
+    <link rel="stylesheet" href="css/components/interactive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+
+    <!-- Corazones flotantes (contenedor para JS) -->
     <div class="hearts" id="hearts"></div>
-    
-    <!--  Added decorative cat -->
-        <div class="hearts" id="hearts"></div>
-    
-    <!--  Added decorative cat -->
+
+    <!-- ======================== -->
+    <!-- Decoraciones CSS         -->
+    <!-- ======================== -->
+
+    <!-- Gato negro -->
     <div class="decorative-cat">
         <div class="cat-body"></div>
         <div class="cat-head">
@@ -31,7 +48,7 @@
         </div>
     </div>
 
-    <!--  Added decorative white cat next to black cat -->
+    <!-- Gato blanco -->
     <div class="decorative-white-cat">
         <div class="white-cat-body"></div>
         <div class="white-cat-head">
@@ -48,8 +65,9 @@
             <div class="white-cat-whisker right"></div>
         </div>
     </div>
-    <!--  Added decorative owl -->
-    <div class="decorative-owl">
+
+    <!-- Buho -->
+    <div class="decorative-owl" id="owl">
         <div class="owl-body">
             <div class="owl-wing left"></div>
             <div class="owl-wing right"></div>
@@ -65,212 +83,102 @@
             </div>
             <div class="owl-beak"></div>
         </div>
+        <!-- Tooltip del búho -->
+        <div class="owl-tooltip" id="owlTooltip">
+            Te cuido mientras él no está aquí 🌙
+        </div>
     </div>
-    
+
+    <!-- ======================== -->
+    <!-- Contenido Principal      -->
+    <!-- ======================== -->
+
     <div class="container">
+
+        <!-- Header -->
         <header class="header">
-            <h1 class="title">Nuestros 5 Años</h1>
-            <p class="subtitle">UN VIAJE DE INOLVIDABLE</p>
-            <div class="date-highlight">21 • Nuestra Fecha Especial</div>
+            <div id="constellation"></div>
+            <h1 class="title">🐈‍⬛ Feliz San Valentín Mishi 🐈</h1>
+            <p class="subtitle">UNA GRAN AVENTURA GRRR</p>
+            <div class="date-highlight">14 de Febrero 2026 🌙</div>
         </header>
 
+        <!-- Mensaje del Corazón -->
+        <section class="heart-message">
+            <div class="heart-message-line">Aunque esté lejos, mi corazoncito está contigo</div>
+        </section>
+
+        <!-- Galeria / Slideshow -->
         <div class="gallery-container">
             <div class="slideshow" id="slideshow">
-                <div class="slide active" style="background-image: url('img/66C9F080-DC0C-428A-BAB4-04605BD5594D.JPG');">
-                    <div class="slide-overlay">
-                        <div class="slide-text">"El amor no se mira, se siente"</div>
-                        <div class="slide-caption">Gracias por ser mi lugar seguro :'</div>
-                    </div>
-                </div>
-                
-                <div class="slide" style="background-image: url('img/IMG_5462.HEIC');">
-                    <div class="slide-overlay">
-                        <div class="slide-text">"Contigo, cada día es una aventura"</div>
-                        <div class="slide-caption">Momentos de risas y complicidad</div>
-                    </div>
-                </div>
-                
-                <div class="slide" style="background-image: url('img/Captura de pantalla 2025-09-21 a la(s) 12.54.50 a. m..png');">
-                    <div class="slide-overlay">
-                        <div class="slide-text">"Bailando bajo las estrellas"</div>
-                        <div class="slide-caption">Nuestras noches siempre son mágicas</div>
-                    </div>
-                </div>
-                
-                <div class="slide" style="background-image: url('img/E558B9B5-684A-4873-A4BA-778C98CF572E.JPG');">
-                    <div class="slide-overlay">
-                        <div class="slide-text">"Una sonrisa tuya es mi medicina para todo"</div>
-                        <div class="slide-caption">Regalame tus sonrisas</div>
-                    </div>
-                </div>
-                
-                <div class="slide" style="background-image: url('img/9D6EBFE0-9145-4B25-816C-C683DAE8C070.JPG');">
-                    <div class="slide-overlay">
-                        <div class="slide-text">"5 años y toda una vida por delante"</div>
-                        <div class="slide-caption">Un nuevo día nos aguarda :3</div>
-                    </div>
-                </div>
+                <!-- Los slides se generan dinamicamente desde js/data.js -->
             </div>
-            
-            <button class="navigation prev" onclick="changeSlide(-1)">‹</button>
-            <button class="navigation next" onclick="changeSlide(1)">›</button>
+            <button class="navigation prev" id="prevBtn">&#8249;</button>
+            <button class="navigation next" id="nextBtn">&#8250;</button>
         </div>
-        
+
+        <!-- Dots de navegacion -->
         <div class="dots-container" id="dotsContainer"></div>
-        
+
+        <!-- Botones de interacción -->
         <div class="surprise-section">
-            <button class="surprise-button" onclick="showSurprise()">
-                🌺Una Sorpresa Especial🍁
+            <button class="valentine-button hug-button" id="hugBtn">
+                Un abrazo psicológico 🧣🌙
+            </button>
+            <button class="valentine-button surprise-button" id="surpriseBtn">
+                Abrelo si te atreves
             </button>
         </div>
+
     </div>
 
-    <!-- Modal de Sorpresa -->
-    <div id="surpriseModal" class="modal" >
-        <div class="modal-content" style="margin-top: 5rem;">
-            <h2 class="modal-title">Ohayo Mishi!</h2>
-            <p class="modal-message">
-                Sorpresa! :D
-                <br><br>
-                Debo decir que estos ultimos años inicié una aventura sin saber qué depararía el futuro, fue un salto a ciegas, uno que me lleno de sentimientos muy bonitos por tu, gracias por darme alegría durante mis días
-                <br><br>
-                El 21 siempre será nuestra fecha especial, porque fue el día que escogimos para que sea especial, fue cuando nos comprometimos a tener un futuro, como algo mas que amigos y F xd
-                <br><br>
-                <strong>Te amo y como ya inicia la primavera te regalo esta florcita amarilla xd</strong>
-            </p>
-            <button class="close-button" onclick="closeSurprise()">Con todo mi love ❤️</button>
+    <!-- ======================== -->
+    <!-- Modal de Sorpresa        -->
+    <!-- ======================== -->
+
+    <div id="surpriseModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-message" id="modalMessage"></p>
+            <button class="close-button" id="closeBtn">Con todo mi love 💚♥️</button>
         </div>
     </div>
 
-    <!--  Added surprise flower that appears when button is clicked -->
-    <!-- Updated surprise flower to use provided sunflower image -->
-    <div class="surprise-flower" id="surpriseFlower">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-OknxAAf8cg5BjA98JJI2bSIiq3zbjR.png" alt="Sunflower" class="sunflower-image">
+    <!-- ======================== -->
+    <!-- Animación de Abrazo      -->
+    <!-- ======================== -->
+
+    <div id="hugContainer" class="hug-container">
+        <div class="hug-overlay"></div>
+        <div class="hug-content">
+            <div class="hug-silhouette left"></div>
+            <div class="hug-silhouette right"></div>
+        </div>
     </div>
- <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        let slideInterval;
 
-        // Crear puntos de navegación
-        function createDots() {
-            const dotsContainer = document.getElementById('dotsContainer');
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('span');
-                dot.className = 'dot';
-                if (i === 0) dot.classList.add('active');
-                dot.onclick = () => goToSlide(i);
-                dotsContainer.appendChild(dot);
-            }
-        }
+    <!-- ======================== -->
+    <!-- Easter Egg de la Luna    -->
+    <!-- ======================== -->
 
-        // Cambiar slide
-        function changeSlide(direction) {
-            slides[currentSlide].classList.remove('active');
-            document.querySelectorAll('.dot')[currentSlide].classList.remove('active');
-            
-            currentSlide += direction;
-            
-            if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            } else if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
-            }
-            
-            slides[currentSlide].classList.add('active');
-            document.querySelectorAll('.dot')[currentSlide].classList.add('active');
-        }
+    <div id="moonEasterEgg" class="moon-easter-egg">
+        <div class="moon-overlay"></div>
+        <div class="moon-content">
+            <div class="big-moon">🌙</div>
+            <div class="star-heart" id="starHeart"></div>
+            <div id="fireworksContainer"></div>
+            <button class="moon-close" id="moonClose">Regresar 💚</button>
+        </div>
+    </div>
 
-        // Ir a slide específico
-        function goToSlide(slideIndex) {
-            slides[currentSlide].classList.remove('active');
-            document.querySelectorAll('.dot')[currentSlide].classList.remove('active');
-            
-            currentSlide = slideIndex;
-            
-            slides[currentSlide].classList.add('active');
-            document.querySelectorAll('.dot')[currentSlide].classList.add('active');
-        }
+    <!-- ======================== -->
+    <!-- Scripts modulares        -->
+    <!-- ======================== -->
+    <script src="js/data.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/slideshow.js"></script>
+    <script src="js/surprise.js"></script>
+    <script src="js/valentine.js"></script>
+    <script src="js/main.js"></script>
 
-        // Auto-play slideshow
-        function startSlideshow() {
-            slideInterval = setInterval(() => {
-                changeSlide(1);
-            }, 4000);
-        }
-
-        function stopSlideshow() {
-            clearInterval(slideInterval);
-        }
-
-        // Mostrar sorpresa
-        function showSurprise() {
-            document.getElementById('surpriseModal').style.display = 'block';
-            document.getElementById('surpriseFlower').style.display = 'block';
-            createHearts();
-            stopSlideshow();
-        }
-
-        // Cerrar sorpresa
-        function closeSurprise() {
-            document.getElementById('surpriseModal').style.display = 'none';
-            document.getElementById('surpriseFlower').style.display = 'none';
-            document.getElementById('hearts').innerHTML = '';
-            startSlideshow();
-        }
-
-        // Crear corazones flotantes
-        function createHearts() {
-            const heartsContainer = document.getElementById('hearts');
-            const heartSymbols = ['💕', '💖', '💗', '💝', '💘', '❤️', '💙', '💜'];
-            
-            for (let i = 0; i < 20; i++) {
-                setTimeout(() => {
-                    const heart = document.createElement('div');
-                    heart.className = 'heart';
-                    heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
-                    heart.style.left = Math.random() * 100 + '%';
-                    heart.style.animationDelay = Math.random() * 2 + 's';
-                    heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                    heartsContainer.appendChild(heart);
-                    
-                    setTimeout(() => {
-                        heart.remove();
-                    }, 7000);
-                }, i * 200);
-            }
-        }
-
-        // Cerrar modal al hacer clic fuera
-        window.onclick = function(event) {
-            const modal = document.getElementById('surpriseModal');
-            if (event.target === modal) {
-                closeSurprise();
-            }
-        }
-
-        // Inicializar
-        document.addEventListener('DOMContentLoaded', function() {
-            createDots();
-            startSlideshow();
-            
-            // Pausar slideshow al hacer hover
-            const galleryContainer = document.querySelector('.gallery-container');
-            galleryContainer.addEventListener('mouseenter', stopSlideshow);
-            galleryContainer.addEventListener('mouseleave', startSlideshow);
-        });
-
-        // Navegación con teclado
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowLeft') {
-                changeSlide(-1);
-            } else if (event.key === 'ArrowRight') {
-                changeSlide(1);
-            } else if (event.key === 'Escape') {
-                closeSurprise();
-            }
-        });
-    </script>
 </body>
 </html>

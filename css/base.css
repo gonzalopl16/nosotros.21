@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Base - Variables CSS, Reset y Tipografia
+   ========================================================================== */
+
+:root {
+    /* Colores principales - San Valentín 🌙🧣💚 (tonos oscuros) */
+    --color-primary: #6b21a8;        /* Morado oscuro nocturno 🌙 */
+    --color-primary-light: #8b5cf6;  /* Morado medio */
+    --color-secondary: #059669;      /* Verde esmeralda oscuro 💚 */
+    --color-tertiary: #dc2626;       /* Rojo oscuro/coral 🧣 */
+    --color-bg: #0f0a1e;             /* Azul noche muy oscuro */
+    --color-bg-secondary: #1a1330;   /* Morado muy oscuro */
+    --color-text: #e2e8f0;           /* Texto claro */
+    --color-text-secondary: #cbd5e1; /* Texto secundario claro */
+    --color-text-muted: #94a3b8;
+
+    /* Colores de acento - San Valentín */
+    --color-heart: #10b981;          /* Verde 💚 */
+    --color-heart-pink: #f472b6;     /* Rosa/magenta ♥️ */
+    --color-pink-light: #fda4af;
+    --color-owl-body: #d97706;
+    --color-owl-dark: #92400e;
+    --color-owl-beak: #fbbf24;
+
+    /* Colores Valentine adicionales */
+    --color-valentine-purple: #6b21a8;  /* Morado oscuro 🌙 */
+    --color-valentine-green: #10b981;   /* Verde 💚 */
+    --color-valentine-coral: #f97316;   /* Naranja/coral 🧣 */
+
+    /* Tipografia */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+
+    /* Bordes */
+    --radius-sm: 5px;
+    --radius-md: 20px;
+    --radius-lg: 25px;
+    --radius-full: 50px;
+    --radius-circle: 50%;
+
+    /* Sombras */
+    --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+    /* Transiciones */
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.5s ease;
+    --transition-slow: 1s ease-in-out;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body - San Valentín 💚🌙 */
+body {
+    font-family: var(--font-body);
+    background: linear-gradient(180deg, #0a0118 0%, #1a0b2e 40%, #2d1b4e 70%, #3e2069 100%);
+    min-height: 100vh;
+    color: var(--color-text);
+    overflow-x: hidden;
+    position: relative;
+}

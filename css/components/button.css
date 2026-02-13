@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Button - Boton de sorpresa (reutilizable)
+   ========================================================================== */
+
+.surprise-button {
+    background: linear-gradient(45deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-bg);
+    border: none;
+    padding: var(--spacing-sm) 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.surprise-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}
+
+.surprise-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--transition-medium);
+}
+
+.surprise-button:hover::before {
+    left: 100%;
+}

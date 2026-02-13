@@ -1,0 +1,422 @@
+/* ==========================================================================
+   Decorations - Gatos CSS, Buho, Flor sorpresa
+   ========================================================================== */
+
+/* ---- Gato Negro ---- */
+.decorative-cat {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    z-index: 100;
+    animation: catSway 4s ease-in-out infinite;
+    transition: all 0.8s ease-in-out;
+}
+
+.cat-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 50px;
+    background: #1a1a1a;
+    border-radius: 20px 20px 5px 5px;
+}
+
+.cat-head {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 30px;
+    background: #1a1a1a;
+    border-radius: var(--radius-circle);
+}
+
+.cat-ear {
+    position: absolute;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 15px solid #1a1a1a;
+}
+
+.cat-ear.left {
+    left: 3px;
+}
+
+.cat-ear.right {
+    right: 3px;
+}
+
+.cat-ear-inner {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid #ec4899;
+}
+
+.cat-eye {
+    position: absolute;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    background: #10b981;
+    border-radius: var(--radius-circle);
+    box-shadow: 0 0 8px #10b981;
+}
+
+.cat-eye.left {
+    left: 8px;
+}
+
+.cat-eye.right {
+    right: 8px;
+}
+
+.cat-nose {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid #ec4899;
+}
+
+.cat-tail {
+    position: absolute;
+    bottom: 25px;
+    right: -15px;
+    width: 3px;
+    height: 25px;
+    background: var(--color-primary);
+    border-radius: 3px;
+    transform-origin: bottom;
+    animation: tailWag 2s ease-in-out infinite;
+}
+
+.cat-whisker {
+    position: absolute;
+    top: 18px;
+    width: 12px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.cat-whisker.left {
+    left: -8px;
+}
+
+.cat-whisker.right {
+    right: -8px;
+}
+
+/* ---- Gato Blanco ---- */
+.decorative-white-cat {
+    position: fixed;
+    bottom: 20px;
+    left: 110px;
+    width: 80px;
+    height: 80px;
+    z-index: 100;
+    animation: catSway 4s ease-in-out infinite 0.5s;
+    transition: all 0.8s ease-in-out;
+}
+
+.white-cat-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 50px;
+    background: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-radius: 20px 20px 5px 5px;
+}
+
+.white-cat-head {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 30px;
+    background: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-radius: var(--radius-circle);
+}
+
+.white-cat-ear {
+    position: absolute;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 15px solid #f8fafc;
+}
+
+.white-cat-ear::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 15px solid #cbd5e1;
+    z-index: -1;
+}
+
+.white-cat-ear.left {
+    left: 3px;
+}
+
+.white-cat-ear.right {
+    right: 3px;
+}
+
+.white-cat-ear-inner {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid var(--color-pink-light);
+}
+
+.white-cat-eye {
+    position: absolute;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    background: #7c3aed;
+    border-radius: var(--radius-circle);
+    box-shadow: 0 0 8px #7c3aed;
+}
+
+.white-cat-eye.left {
+    left: 8px;
+}
+
+.white-cat-eye.right {
+    right: 8px;
+}
+
+.white-cat-nose {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid var(--color-pink-light);
+}
+
+.white-cat-tail {
+    position: absolute;
+    bottom: 25px;
+    right: -15px;
+    width: 3px;
+    height: 25px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-primary);
+    border-radius: 3px;
+    transform-origin: bottom;
+    animation: tailWag 2s ease-in-out infinite 0.5s;
+}
+
+.white-cat-whisker {
+    position: absolute;
+    top: 18px;
+    width: 12px;
+    height: 1px;
+    background: #94a3b8;
+}
+
+.white-cat-whisker.left {
+    left: -8px;
+}
+
+.white-cat-whisker.right {
+    right: -8px;
+}
+
+/* ---- Buho ---- */
+.decorative-owl {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 80px;
+    z-index: 100;
+    animation: owlBob 3s ease-in-out infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: visible;
+}
+
+.owl-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 55px;
+    background: var(--color-owl-body);
+    border-radius: 50% 50% 20px 20px;
+}
+
+.owl-wing {
+    position: absolute;
+    top: 15px;
+    width: 20px;
+    height: 35px;
+    background: var(--color-owl-dark);
+    border-radius: var(--radius-circle);
+}
+
+.owl-wing.left {
+    left: -5px;
+    transform: rotate(-15deg);
+}
+
+.owl-wing.right {
+    right: -5px;
+    transform: rotate(15deg);
+}
+
+.owl-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 45px;
+    background: var(--color-owl-dark);
+    border-radius: var(--radius-circle);
+}
+
+.owl-ear-tuft {
+    position: absolute;
+    top: -8px;
+    width: 8px;
+    height: 15px;
+    background: var(--color-owl-dark);
+    border-radius: 50% 50% 0 0;
+}
+
+.owl-ear-tuft.left {
+    left: 8px;
+    transform: rotate(-20deg);
+}
+
+.owl-ear-tuft.right {
+    right: 8px;
+    transform: rotate(20deg);
+}
+
+.owl-eye {
+    position: absolute;
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    background: var(--color-bg);
+    border-radius: var(--radius-circle);
+    border: 2px solid var(--color-primary-light);
+}
+
+.owl-eye.left {
+    left: 8px;
+}
+
+.owl-eye.right {
+    right: 8px;
+}
+
+.owl-pupil {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary);
+    border-radius: var(--radius-circle);
+}
+
+.owl-beak {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid var(--color-owl-beak);
+}
+
+/* ---- Flor Sorpresa ---- */
+.surprise-flower {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    z-index: 1001;
+    opacity: 0;
+    animation: flowerBloom 2s ease-out forwards;
+    display: none;
+}
+
+.sunflower-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* ---- Corazones flotantes entre gatos ---- */
+.cat-heart {
+    position: fixed;
+    bottom: 80px;
+    left: 70px;
+    font-size: 20px;
+    opacity: 0;
+    z-index: 99;
+    pointer-events: none;
+    animation: floatBetweenCats 3s ease-in-out infinite;
+}
+
+/* ---- Estados de animación para cats durante hug ---- */
+.decorative-cat.hugging {
+    left: calc(50% - 100px);
+    animation: none;
+}
+
+.decorative-white-cat.hugging {
+    left: calc(50% + 20px);
+    animation: none;
+}

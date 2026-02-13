@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Responsive - Media queries, adaptaciones movil
+   ========================================================================== */
+
+/* Movil (< 768px) - Optimizado para telefono */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .slideshow {
+        height: 400px;
+    }
+
+    .container {
+        padding: var(--spacing-sm);
+    }
+
+    .modal-content {
+        padding: var(--spacing-lg);
+    }
+
+    /* Navegacion mas pequena en movil */
+    .navigation {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    /* ---- Decoraciones adaptadas para movil ---- */
+
+    /* Gatos: mas pequenos, reposicionados */
+    .decorative-cat {
+        bottom: 10px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+        transform: scale(0.6);
+        transform-origin: bottom left;
+    }
+
+    .decorative-white-cat {
+        bottom: 10px;
+        left: 65px;
+        width: 50px;
+        height: 50px;
+        transform: scale(0.6);
+        transform-origin: bottom left;
+    }
+
+    /* Buho: mas pequeno */
+    .decorative-owl {
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 55px;
+    }
+
+    /* Flor sorpresa adaptada */
+    .surprise-flower {
+        width: 100px;
+        height: 100px;
+        top: 10%;
+    }
+
+    /* Textos del slide mas pequenos */
+    .slide-text {
+        font-size: 1.2rem;
+    }
+
+    .slide-caption {
+        font-size: 0.8rem;
+    }
+
+    .slide-overlay {
+        padding: var(--spacing-sm);
+    }
+
+    /* Modal adaptado */
+    .modal-title {
+        font-size: 2rem;
+    }
+
+    .modal-message {
+        font-size: 1rem;
+    }
+
+    /* Boton sorpresa */
+    .surprise-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Movil pequeno (< 480px) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .slideshow {
+        height: 350px;
+    }
+
+    .slide-text {
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        margin-top: 3rem;
+        padding: var(--spacing-md);
+    }
+
+    .modal-title {
+        font-size: 1.8rem;
+    }
+}

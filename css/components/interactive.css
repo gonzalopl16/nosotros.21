@@ -1,0 +1,347 @@
+/* ==========================================================================
+   Interactive - Elementos interactivos especiales (Abrazo virtual, Easter eggs)
+   ========================================================================== */
+
+/* ===== ABRAZO VIRTUAL ===== */
+
+.hug-animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.hug-animation-container.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.hug-scene {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+/* Siluetas (él y ella) */
+.silhouette {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background: var(--color-secondary);
+    border-radius: 40px 40px 10px 10px;
+    opacity: 0;
+}
+
+.silhouette.him {
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: slideInFromLeft 2s ease-out forwards;
+}
+
+.silhouette.her {
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: slideInFromRight 2s ease-out forwards;
+}
+
+/* Cabeza de silueta */
+.silhouette::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+}
+
+/* Abrazo (aparece cuando se encuentran) */
+.hug-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    opacity: 0;
+    animation: hugPulse 1s ease-out 2s forwards;
+}
+
+/* Texto del abrazo */
+.hug-text {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 2s forwards;
+    padding: 0 2rem;
+}
+
+
+/* ===== EASTER EGG DE LA LUNA ===== */
+
+.moon-easter-egg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 3000;
+    background: radial-gradient(circle, #1e1b4b 0%, #0f0f1e 100%);
+}
+
+.moon-easter-egg.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out;
+}
+
+.big-moon {
+    font-size: 150px;
+    animation: moonGlow 2s ease-in-out infinite, float 3s ease-in-out infinite;
+    margin-bottom: 2rem;
+}
+
+.star-heart {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+
+.star-heart .star {
+    position: absolute;
+    font-size: 20px;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+/* Estrellas formando corazón */
+.star-heart .star:nth-child(1) { top: 50px; left: 80px; animation-delay: 0s; }
+.star-heart .star:nth-child(2) { top: 30px; left: 100px; animation-delay: 0.2s; }
+.star-heart .star:nth-child(3) { top: 20px; left: 130px; animation-delay: 0.4s; }
+.star-heart .star:nth-child(4) { top: 20px; left: 170px; animation-delay: 0.6s; }
+.star-heart .star:nth-child(5) { top: 30px; left: 200px; animation-delay: 0.8s; }
+.star-heart .star:nth-child(6) { top: 50px; left: 220px; animation-delay: 1s; }
+.star-heart .star:nth-child(7) { top: 80px; left: 230px; animation-delay: 1.2s; }
+.star-heart .star:nth-child(8) { top: 120px; left: 220px; animation-delay: 1.4s; }
+.star-heart .star:nth-child(9) { top: 160px; left: 200px; animation-delay: 1.6s; }
+.star-heart .star:nth-child(10) { top: 190px; left: 170px; animation-delay: 1.8s; }
+.star-heart .star:nth-child(11) { top: 210px; left: 150px; animation-delay: 2s; }
+.star-heart .star:nth-child(12) { top: 190px; left: 130px; animation-delay: 2.2s; }
+.star-heart .star:nth-child(13) { top: 160px; left: 100px; animation-delay: 2.4s; }
+.star-heart .star:nth-child(14) { top: 120px; left: 80px; animation-delay: 2.6s; }
+.star-heart .star:nth-child(15) { top: 80px; left: 70px; animation-delay: 2.8s; }
+
+.moon-message {
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    max-width: 600px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease-out 1s forwards;
+    opacity: 0;
+}
+
+.moon-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 2s forwards;
+}
+
+.moon-close:hover {
+    background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 30px rgba(236, 72, 153, 0.6);
+}
+
+/* ===== BÚHO CLICKEABLE ===== */
+
+.owl-tooltip {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    transform: scale(0);
+    transform-origin: bottom right;
+    background: rgba(30, 15, 60, 0.95);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 20px rgba(107, 33, 168, 0.4);
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.owl-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(30, 15, 60, 0.95);
+}
+
+.decorative-owl.clicked .owl-tooltip {
+    transform: scale(1);
+}
+
+.decorative-owl {
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.decorative-owl:hover {
+    transform: scale(1.1);
+}
+
+/* Animación de parpadeo del búho */
+.owl-eye::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-owl-dark);
+    border-radius: 50%;
+    opacity: 0;
+    animation: blink 5s ease-in-out infinite;
+}
+
+/* ===== ANIMACIONES ===== */
+
+@keyframes slideInFromLeft {
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+    100% {
+        left: 140px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        right: -100px;
+        opacity: 0;
+    }
+    100% {
+        right: 140px;
+        opacity: 1;
+    }
+}
+
+@keyframes hugPulse {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes moonGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8));
+        transform: scale(1.05);
+    }
+}
+
+@keyframes blink {
+    0%, 98%, 100% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 1;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .hug-scene {
+        width: 300px;
+        height: 300px;
+    }
+
+    .silhouette {
+        width: 60px;
+        height: 90px;
+    }
+
+    .silhouette::before {
+        width: 30px;
+        height: 30px;
+        top: -25px;
+    }
+
+    .hug-effect {
+        font-size: 50px;
+    }
+
+    .hug-message {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+
+    .big-moon {
+        font-size: 100px;
+    }
+
+    .star-heart {
+        width: 200px;
+        height: 200px;
+        transform: scale(0.7);
+    }
+
+    .moon-message {
+        font-size: 1.3rem;
+        padding: 0 1rem;
+    }
+}

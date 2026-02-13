@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Modal - Modal de sorpresa
+   ========================================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(26, 19, 48, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    margin-top: 5rem;
+    animation: slideIn 0.5s ease-out;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: #a78bfa;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+}
+
+.modal-message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.close-button {
+    background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem var(--spacing-lg);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+}
+
+.close-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 30px rgba(236, 72, 153, 0.6);
+}
