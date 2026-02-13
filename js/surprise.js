@@ -5,6 +5,8 @@
 /**
  * Muestra el modal de sorpresa con corazones y confetti
  */
+var savedScrollPosition = 0;
+
 function showSurprise() {
     const modal = document.getElementById('surpriseModal');
     const modalTitle = document.getElementById('modalTitle');
@@ -13,6 +15,11 @@ function showSurprise() {
     // Cargar contenido desde data.js
     modalTitle.textContent = valentineMessage.title;
     modalMessage.innerHTML = valentineMessage.content;
+    
+    // Bloquear scroll del body (guardar posición para restaurar después)
+    savedScrollPosition = window.scrollY;
+    document.body.classList.add('modal-open');
+    document.body.style.top = '-' + savedScrollPosition + 'px';
     
     modal.style.display = 'block';
     createHearts();
@@ -26,6 +33,12 @@ function showSurprise() {
 function closeSurprise() {
     document.getElementById('surpriseModal').style.display = 'none';
     document.getElementById('hearts').innerHTML = '';
+    
+    // Restaurar scroll del body
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, savedScrollPosition);
+    
     startSlideshow();
 }
 

@@ -206,10 +206,8 @@ function handleOwlClick() {
  */
 function startDynamicTitle() {
     var titles = [
-        '💚 Te amo Mishi',
-        '🌙 Feliz San Valentín',
-        '🐈‍⬛🐈 Nosotros',
-        '💚 Eres mi todo'
+        'Feliz San Valentín',
+        'Nosotros',
     ];
     var currentIndex = 0;
 

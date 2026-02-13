@@ -2,6 +2,13 @@
    Base - Variables CSS, Reset y Tipografia
    ========================================================================== */
 
+/* Bloquear scroll del body cuando el modal está abierto */
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 :root {
     /* Colores principales - San Valentín 🌙🧣💚 (tonos oscuros) */
     --color-primary: #6b21a8;        /* Morado oscuro nocturno 🌙 */
